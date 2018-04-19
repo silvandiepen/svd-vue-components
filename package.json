@@ -1,0 +1,29 @@
+{
+  "name": "svd-vue-components",
+  "version": "0.0.1",
+  "description": "Vue Grid components for svd-style",
+  "main": "index.js",
+  "dependencies": {
+    "vue": "^2.5.16"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silvandiepen/svd-vue-components.git"
+  },
+  "keywords": [
+    "grid",
+    "components",
+    "vue",
+    "style"
+  ],
+  "author": "Sil van Diepen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/silvandiepen/svd-vue-components/issues"
+  },
+  "homepage": "https://github.com/silvandiepen/svd-vue-components#readme"
+}
