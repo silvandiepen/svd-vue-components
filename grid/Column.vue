@@ -10,7 +10,17 @@
 		data() {
 			return{
 				classNames: ['column'],
-				breakpoints: ['small','medium','large','xlarge','xxlarge']
+				breakpoints: ['small','medium','large','xlarge','xxlarge'],
+				partials: {
+					'full': 1,
+					'half': 0.5,
+					'third': 0.33,
+					'quarter': 0.25,
+					'fifth': 0.2,
+					'sixth': 0.16,
+					'two-third': 0.67,
+					'three-quarter': 0.75,
+				}
 			}
 		},
 		methods: {
@@ -26,33 +36,28 @@
 					self.classNames.push('color-'+this.$props.textColor);
 				}
 			},
-			setBreakpoints: function(){
+			setWidth: function(){
 				let self = this;
 				for (let i = 0; i < this.breakpoints.length; ++i) {
 					if(self.$props[self.breakpoints[i]] != undefined){
-						let value = self.calcBreakpoint(self.$props[self.breakpoints[i]]);
+						let value = self.calcWidth(self.$props[self.breakpoints[i]]);
 						this.setClasses(self.breakpoints[i]+'-' + value);
 					}
 				}
 			},
-			calcBreakpoint(bp){
+			calcWidth(bp){
 				let value = '';
-				let partials = {
-					'full': 1,
-					'half': 0.5,
-					'third': 0.33,
-					'quarter': 0.25,
-					'fifth': 0.2,
-					'sixth': 0.16,
-					'two-third': 0.67,
-					'three-quarter': 0.75,
-				}
 				if(bp.split(':').length > 1){
-					value = Math.round(( bp.split(':')[0] / bp.split(':')[1] ) * 100) / 100;
+					value = this.getWidth(Math.round(( bp.split(':')[0] / bp.split(':')[1] ) * 100) / 100);
 				} else if(Number(bp) > 0) {
-					value = Math.round(Number(bp) * 100) / 100;
+					value = this.getWidth(Math.round(Number(bp) * 100) / 100);
+				} else if(bp in this.partials){
+					value = bp;
 				}
-				Object.keys(partials).forEach(function(key) {
+				return value;
+			},
+			getWidth(value){
+				Object.keys(this.partials).forEach(function(key) {
 						if(value == partials[key]){
 							value = key;
 						}
@@ -62,7 +67,7 @@
 		},
 		created() {
 			this.setClasses();
-			this.setBreakpoints();
+			this.setWidth();
 		}
 	}
 </script>
