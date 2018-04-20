@@ -1,8 +1,8 @@
 /* eslint-disable */
 import Vue from 'vue';
-import Navigation from './Navigation.vue';
-import NavItem from './NavItem.vue';
-import NavGroup from './NavGroup.vue';
+import Navigation from './component/Navigation.vue';
+import NavItem from './component/NavItem.vue';
+import NavGroup from './component/NavGroup.vue';
 
 const Components = {
 	Navigation,

@@ -4,6 +4,7 @@
   "description": "Vue Grid components for svd-style",
   "main": "index.js",
   "dependencies": {
+    "eslint-plugin-vue": "^4.5.0",
     "vue": "^2.5.16"
   },
   "devDependencies": {},
