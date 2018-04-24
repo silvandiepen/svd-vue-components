@@ -1,30 +1,70 @@
 {
   "name": "svd-vue-components",
   "version": "0.0.3",
-  "description": "Vue Grid components for svd-style",
-  "main": "index.js",
-  "dependencies": {
-    "eslint-plugin-vue": "^4.5.0",
-    "vue": "^2.5.16"
-  },
-  "devDependencies": {},
+  "description": "A straightforward Vue component to filter and sort tables",
+  "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --config docs/webpack.config.js",
+    "demo": "NODE_ENV=production webpack --config docs/webpack.config.js",
+    "build": "rm -rf dist && NODE_ENV=production webpack",
+    "lint": "eslint src __tests__ --ext .js,.vue --fix; exit 0",
+    "prepublish": "npm run test; npm run build",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/silvandiepen/svd-vue-components.git"
+    "url": "https://github.com/silvandiepen/svd-vue-components.git"
   },
   "keywords": [
-    "grid",
-    "components",
-    "vue",
-    "style"
+    "spatie"
   ],
   "author": "Sil van Diepen",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/silvandiepen/svd-vue-components/issues"
   },
-  "homepage": "https://github.com/silvandiepen/svd-vue-components#readme"
+  "homepage": "https://github.com/silvandiepen/svd-vue-components/",
+  "peerDependencies": {
+    "moment": "^2.18.1",
+    "vue": "^2.5.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.16.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.4.0",
+    "css-loader": "^0.28.1",
+    "diffable-html": "^2.1.0",
+    "eslint": "^4.0.0",
+    "jest": "^19.0.0",
+    "jest-serializer-html": "^4.0.0",
+    "jest-vue-preprocessor": "^0.2.0",
+    "moment": "^2.18.1",
+    "simulant": "^0.2.2",
+    "vue": "^2.5.0",
+    "vue-loader": "^12.0.3",
+    "vue-template-compiler": "^2.3.0",
+    "webpack": "^2.3.3",
+    "webpack-dev-server": "^2.4.2",
+    "webpack-merge": "^4.1.0"
+  },
+  "jest": {
+    "testRegex": "test.js$",
+    "moduleFileExtensions": [
+      "js",
+      "vue"
+    ],
+    "setupFiles": [
+      "<rootDir>/tests/bootstrap"
+    ],
+    "snapshotSerializers": [
+      "<rootDir>/tests/html-serializer"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(vue)$": "<rootDir>/node_modules/jest-vue-preprocessor"
+    }
+  }
 }
