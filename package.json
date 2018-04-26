@@ -26,7 +26,6 @@
   },
   "homepage": "https://github.com/silvandiepen/svd-vue-components/",
   "peerDependencies": {
-    "moment": "^2.18.1",
     "vue": "^2.5.0"
   },
   "devDependencies": {
@@ -55,9 +54,6 @@
     "moduleFileExtensions": [
       "js",
       "vue"
-    ],
-    "setupFiles": [
-      "<rootDir>/tests/bootstrap"
     ],
     "snapshotSerializers": [
       "<rootDir>/tests/html-serializer"
