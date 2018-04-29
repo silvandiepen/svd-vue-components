@@ -1,8 +1,25 @@
 const path = require('path');
 const webpack = require('webpack');
-const merge = require('webpack-merge');
 
-module.exports = merge(require('./webpack.base'), {
+module.exports = {
+  module: {
+      rules: [
+          {
+              test: /\.js/,
+              loaders: ['babel-loader'],
+              exclude: /node_modules/,
+          },
+          {
+              test: /\.vue$/,
+              loaders: ['vue-loader'],
+              exclude: /node_modules/,
+          },
+      ],
+  },
+
+  resolve: {
+      extensions: ['.js', '.vue'],
+  },
     context: __dirname,
 
     entry: {
@@ -18,7 +35,7 @@ module.exports = merge(require('./webpack.base'), {
     },
 
     externals: [
-        'moment', 'vue',
+        'vue',
     ],
 
     plugins: [
@@ -27,4 +44,4 @@ module.exports = merge(require('./webpack.base'), {
             minimize: true,
         }),
     ],
-});
+};

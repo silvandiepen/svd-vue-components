@@ -1,25 +1,43 @@
-const path = require('path');
-const merge = require('webpack-merge');
+const path = require("path");
+const merge = require("webpack-merge");
 
-module.exports = merge(require('../webpack.base'), {
-    context: __dirname,
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.js/,
+        loaders: ["babel-loader"],
+        exclude: /node_modules/
+      },
+      {
+        test: /\.vue$/,
+        loaders: ["vue-loader"],
+        exclude: /node_modules/
+      }
+    ]
+  },
 
-    entry: './app.js',
+  resolve: {
+    extensions: [".js", ".vue"]
+  },
+  context: __dirname,
 
-    output: {
-        path: path.resolve(__dirname, 'build'),
-        filename: 'app.js',
-        publicPath: '/build/',
-    },
+  entry: "./app.js",
 
-    resolve: {
-        alias: {
-            vue: 'vue/dist/vue.js',
-        },
-    },
+  output: {
+    path: path.resolve(__dirname, "build"),
+    filename: "app.js",
+    publicPath: "/build/"
+  },
 
-    devServer: {
-        contentBase: __dirname,
-        port: 2000,
-    },
-});
+  resolve: {
+    alias: {
+      vue: "vue/dist/vue.js"
+    }
+  },
+
+  devServer: {
+    contentBase: __dirname,
+    port: 2000
+  }
+};

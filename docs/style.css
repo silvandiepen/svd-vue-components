@@ -1,0 +1,5 @@
+@import '~svd-style/e'
+.row{
+  border: 1px solid red;
+}
+.column{ border: 1px solid blue; }
