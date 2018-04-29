@@ -1,6 +1,6 @@
 {
   "name": "svd-vue-components",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A straightforward Vue component to filter and sort tables",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
