@@ -67,6 +67,7 @@
     }
   },
   "dependencies": {
-    "svd-style": "^1.5.22"
+    "svd-style": "^1.5.22",
+    "vue-smooth-scroll": "^1.0.13"
   }
 }
