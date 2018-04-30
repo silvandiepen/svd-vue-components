@@ -19,7 +19,8 @@
 </template>
 
 <script>
-import vueSmoothScroll from 'vue-smooth-scroll'
+import Vue from 'vue';
+import vueSmoothScroll from 'vue-smooth-scroll';
 Vue.use(vueSmoothScroll);
 
 	export default{
