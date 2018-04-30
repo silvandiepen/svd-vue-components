@@ -4,9 +4,9 @@ exports[`TableComponent can display nested properties 1`] = `
 
 <div id="app">
   <div class="row center">
-    <div class="column">
+    <div class="column small-full">
       <div class="row center">
-        <div class="column">
+        <div class="column small-full">
         </div>
       </div>
     </div>
@@ -19,7 +19,7 @@ exports[`TableComponent can mount 1`] = `
 
 <div id="app">
   <div class="row center">
-    <div class="column">
+    <div class="column small-full">
     </div>
   </div>
 </div>
