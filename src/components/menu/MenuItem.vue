@@ -46,6 +46,9 @@ export default {
     if (this.$props.link) {
       this.theLink = this.$props.link;
     }
+    if (this.$props.to) {
+      this.theLink = this.$props.to;
+    }
     if (this.$props.smooth) {
       this.smoothScroll = true;
     }
