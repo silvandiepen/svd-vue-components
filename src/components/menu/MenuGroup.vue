@@ -5,18 +5,18 @@
 </template>
 
 <script>
-	export default{
-	  name: 'menu-group',
-		props: [],
-		data() {
-			return{
-				module: 'nav'
-			}
-		},
-		created(){
-			if(this.$parent.$attrs.module){
-				this.module = this.$parent.$attrs.module;
-			}
-		}
-	}
+export default {
+  name: "menu-group",
+  props: [],
+  data() {
+    return {
+      module: "nav"
+    };
+  },
+  created() {
+    if (this.$parent.$attrs.module) {
+      this.module = this.$parent.$attrs.module;
+    }
+  }
+};
 </script>

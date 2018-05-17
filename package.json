@@ -9,7 +9,7 @@
     "demo": "NODE_ENV=production webpack --config docs/webpack.config.js",
     "build": "rm -rf dist && NODE_ENV=production webpack",
     "lint": "eslint src __tests__ --ext .js,.vue --fix; exit 0",
-    "prepublish": "npm run test; npm run build",
+    "prepublishOnly": "npm run test; npm run build",
     "test": "jest"
   },
   "repository": {

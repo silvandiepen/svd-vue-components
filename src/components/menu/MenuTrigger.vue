@@ -7,7 +7,7 @@
 	</div>
 </template>
 <script>
-export default{
-	  name: 'menu-trigger'
-}
+export default {
+  name: "menu-trigger"
+};
 </script>
